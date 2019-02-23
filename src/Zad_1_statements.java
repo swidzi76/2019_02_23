@@ -16,5 +16,6 @@ public class Zad_1_statements {
 
         //Zadanie 2
 
+
     }
 }
