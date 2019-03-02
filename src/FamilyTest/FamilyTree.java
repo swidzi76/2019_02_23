@@ -53,7 +53,7 @@ public class FamilyTree {
 
     public int getFamilyAge(){
 
-        return this.father.getAge() + this.mother.getAge();
+        return this.father.getAge() + this.mother.getAge() + this.child.getAge();
     }
     public double getFamilyAgeAvg(){
 
