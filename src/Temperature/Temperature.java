@@ -1,3 +1,8 @@
+package Temperature;
+
+import FahrenheitConverter.FahrenheitConverter;
+
+
 public class Temperature {
     private double temperature;
     private String date;
@@ -24,7 +29,7 @@ public class Temperature {
         return ""+ date+ " " + hour + "  temp :"+ temperature+(char)176 + "C";
     }
     public String showInFarenheit(){
-        FahrenheitConverter  tempF = new FahrenheitConverter();
+        FahrenheitConverter tempF = new FahrenheitConverter();
         return ""+ date+ " " + hour + "  temp :"+ tempF.convertCelsiusToFarenheit(temperature)+" F";
     }
 }

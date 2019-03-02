@@ -1,3 +1,5 @@
+package FahrenheitConverter;
+
 public class FahrenheitConverterApp {
     public static void main(String[] args) {
         FahrenheitConverter temp = new FahrenheitConverter(212);

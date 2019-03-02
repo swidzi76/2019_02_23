@@ -1,4 +1,6 @@
-//public class FahrenheitConverter {
+package FahrenheitConverter;
+
+//public class FahrenheitConverter.FahrenheitConverter {
 //    public static void main(String[] args) {
 //        double temp_f = 212;
 //        // c = (f-32)/1.8;

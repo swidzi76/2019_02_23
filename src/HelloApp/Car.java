@@ -1,3 +1,5 @@
+package HelloApp;
+
 public class Car {
     public String brand;
     public String color;
@@ -9,7 +11,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "HelloApp.Car{" +
                 "brand='" + brand + '\'' +
                 ", color='" + color + '\'' +
                 '}';

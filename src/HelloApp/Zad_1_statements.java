@@ -1,4 +1,4 @@
-package company;
+package HelloApp;
 
 import java.util.Scanner;
 

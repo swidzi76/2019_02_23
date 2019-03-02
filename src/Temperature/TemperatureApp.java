@@ -1,3 +1,5 @@
+package Temperature;
+
 public class TemperatureApp {
     public static void main(String[] args) {
         Temperature temp = new Temperature(23.6,"2019-02-24", "16:00");

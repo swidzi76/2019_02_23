@@ -1,3 +1,5 @@
+package Triangle;
+
 public class TriangleApp {
     public static void main(String[] args) {
         Triangle trojkat = new Triangle();

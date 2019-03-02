@@ -1,11 +1,13 @@
+package ComputerPrice;
+
 /**
- * W osobnej klasie ComputerPrice, w metodzie main() napisz program obliczający cenę komputera
+ * W osobnej klasie ComputerPrice.ComputerPrice, w metodzie main() napisz program obliczający cenę komputera
  * na podstawie jego części. Program ma wypisać na konsolę osobno cenę samego komputera:
  * płyta główna, procesor, pamięć RAM, dysk twardy i osobno cenę komputera i monitora.
  * W cenie należy uwzględnić podatek VAT = 23%.
  */
 
-//public class ComputerPrice {
+//public class ComputerPrice.ComputerPrice {
 //
 //    public static void main(String[] args) {
 //        // ceny netto
@@ -39,7 +41,7 @@ public class ComputerPrice {
 
     @Override
     public String toString() {
-        return "ComputerPrice{" +
+        return "ComputerPrice.ComputerPrice{" +
                 "vat=" + vat +
                 ", plyta_glowna=" + plyta_glowna +
                 ", procesor=" + procesor +
@@ -67,7 +69,7 @@ public class ComputerPrice {
         this.getMonitorPrice();
     }
 }
-//    W klasie ComputerPrice wydziel metody getComputerPrice(),
+//    W klasie ComputerPrice.ComputerPrice wydziel metody getComputerPrice(),
 //    getMonitorPrice() i getComputerAndMonitorPrice(),
-//    ostatnia z metod ma korzystać z dwóch pierwszych. Zmienną VAT ustaw jako pole klasy ComputerPrice.
+//    ostatnia z metod ma korzystać z dwóch pierwszych. Zmienną VAT ustaw jako pole klasy ComputerPrice.ComputerPrice.
 

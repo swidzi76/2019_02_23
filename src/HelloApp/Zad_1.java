@@ -1,3 +1,5 @@
+package HelloApp;
+
 public class Zad_1 {
     public static void main(String[] args) {
         //Zadanie 1
