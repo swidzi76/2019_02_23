@@ -32,13 +32,15 @@ public class StringApp {
         return new StringBuilder().append("Simon says:").append(text).toString();
     }
 
-    public  static String turnBackModifyText(String text){
+    public  static String turnBackModifyText(String text) {
         return text.trim().toLowerCase();
+
     }
     // Napisz metodę, która jako argumenty będzie przyjmować dwie zmienne typu String
     // i zwróci true jeżeli oba teksty zaczynają się od tego samego znaku.
 
     public static boolean zadanie5(String s1, String s2){
+
         return (s1.charAt(0) == s2.charAt(0));
     }
     // Napisz metodę, która jako argumenty będzie przyjmować dwie zmienne typu String
