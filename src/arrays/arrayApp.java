@@ -56,26 +56,26 @@ public class arrayApp {
             System.out.print(str[i]+", ");
         System.out.println();
     }
-    public static int sumArrayInt(int[] array){
+    private static int sumArrayInt(int[] array){
         int sum = 0;
         for (int i = 0; i < array.length; i++)
             sum += array[i];
         return sum;
     }
 
-    public static int[] makeArrayOfEvenNumbers(int n){
+    private static int[] makeArrayOfEvenNumbers(int n){
         int[] temp = new int[n];
         for(int i = 0; i < temp.length; i++)
             temp[i] = 2*(i+1);
         return temp;
     }
 
-    public static void makeDoubleArray(double[] tab){
+    private static void makeDoubleArray(double[] tab){
         for(int i = 0; i< tab.length; i++)
             tab[i] *= 2;
     }
 
-    public static void showFirstMiddleLastElementOfArrayDouble(double[] arr){
+    private static void showFirstMiddleLastElementOfArrayDouble(double[] arr){
         System.out.println("pierwszy element to :"+ arr[0]);
         if((arr.length % 2) != 0){
             // nieparzysta liczba elementów zwacamy środkowy
