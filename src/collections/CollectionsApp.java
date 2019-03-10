@@ -1,7 +1,6 @@
 package collections;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class CollectionsApp {
     public static void main(String[] args) {
@@ -89,6 +88,26 @@ public class CollectionsApp {
                 if (list1.indexOf(str) < 0)
                     System.out.println(str);
             }
+        }
+// ----------------------------------------------------------------------------------------------
+// ------------------------------------ ZADANIE 4 -----------------------------------------------
+        System.out.println(" ------------------ ZADANIE 4 ---------------------------------------");
+        Set<String> set = new HashSet<>();
+        Scanner scanner = new Scanner(System.in);
+        String name = "";
+        System.out.println(" Podaj imiona - q - koniec");
+        while(true){
+            System.out.print(">>>");
+            name = scanner.nextLine();
+            if("q".equalsIgnoreCase(name)){
+                break;
+            }
+            set.add(name);
+
+        }
+        System.out.println(" Liczba zapamiętanych imion : "+ set.size());
+        for (String str : set) {
+            System.out.println(str);
         }
 
 
