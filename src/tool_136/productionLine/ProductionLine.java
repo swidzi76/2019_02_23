@@ -1,5 +1,8 @@
 package tool_136.productionLine;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ProductionLine {
@@ -13,7 +16,7 @@ public class ProductionLine {
     public void addNewCar(Car car){
         cars[index++] = car;
     }
-    public void userAddNewCar(){
+    public void addUserNewCar(){
         //tworzymy nowy Car
         // zaczynamy od wyboru silnika
         Scanner scan = new Scanner(System.in);
@@ -150,6 +153,91 @@ public class ProductionLine {
         cars[index++] = carU;
 
     }//userAddNewCar
+    public void addRandomNewCars(int number){
+        for (int i = 0; i < number; i++) {
+            addRandomNewCar();
+        }
+    }
+    public void addRandomNewCar(){
+        //tworzymy nowy Car
+        // zaczynamy od wyboru silnika
+        Car carU = new Car();
+        Random random = new Random();
+        EngineType tempEt= EngineType.DIESEL;
+
+        EngineType userEngineType = carU.getAvailableEngineType(
+                random.nextInt(tempEt.howMuch())+1);
+        switch (userEngineType){
+            case DIESEL:{
+                DieselEngineType userDieselEngineType = carU.getAvailableDieselEngineType(
+                        random.nextInt( DieselEngineType.D_1600.howMuch()) + 1);
+                carU.setEngine(new Engine(userEngineType, userDieselEngineType.getProperities()));
+                break;
+            }
+            case PETROL:{
+                PetrolEngineType userPetrolEngineType = carU.getAvailablePetrolEngineType(
+                        random.nextInt( PetrolEngineType.P_1800.howMuch()) + 1);
+                carU.setEngine(new Engine(userEngineType, userPetrolEngineType.getProperities()));
+                break;
+            }
+            case ELECTRIC:{
+                ElectricEngineType userElectricEngineType = carU.getAvailableElectricEngineType(
+                        random.nextInt( ElectricEngineType.E_50.howMuch()) + 1);
+                carU.setEngine(new Engine(userEngineType, userElectricEngineType.getProperities()));
+                break;
+            }
+            case HYBRID:{
+                HybridEngineType userHybridEngineType = carU.getAvailableHybridEngineType(
+                        random.nextInt( HybridEngineType.H_1.howMuch()) + 1);
+                carU.setEngine(new Engine(userEngineType, userHybridEngineType.getProperities()));
+                break;
+            }
+
+        }
+        // wybór karoserii
+        BodyType userBodyType = carU.getAvailableBodyType(
+                random.nextInt(BodyType.COMBO.howMuch()) + 1);
+        carU.setBodyType(userBodyType);
+
+        // wybór koloru
+        ColorType userColorType = carU.getAvailableColorType(
+                random.nextInt(ColorType.BLACK.howMuch()) + 1);
+        carU.setColorType(userColorType);        // wybór koloru
+
+        // metalik ??
+        switch (random.nextInt(2)){
+            case 0 : {
+                carU.setMetalic(true);
+                break;
+            }
+            case 1 : {
+                carU.setMetalic(false);
+            }
+        }
+        // wybór wyposarzenia dodatkowego
+        // wersja bez powtórzeń
+        int numberOfEq = random.nextInt(AdditionalEquipmentType.GPS.howMuch()) + 1; // tyle do wylosowania
+        AdditionalEquipmentType[] uEq = new AdditionalEquipmentType[numberOfEq];    // tu mają być wyniki
+
+        List<AdditionalEquipmentType> list = new LinkedList<>();
+        for (int i = 0; i < AdditionalEquipmentType.GPS.howMuch(); i++) {
+            list.add(carU.getAvailableAdditionalEquipmentType(i+1));
+        }
+        // losujemy elementy Listy list
+        for (int i = 0; i < numberOfEq; i++) {
+            int eqNr = random.nextInt(list.size());
+            uEq[i] = list.get(eqNr);
+            list.remove(eqNr);
+        }
+//        for (int i = 0; i < numberOfEq; i++) {
+//            int eqNr = random.nextInt(AdditionalEquipmentType.GPS.howMuch()) + 1;
+//            // elementy wylosowane mogą się powtarzać
+//            uEq[i] = carU.getAvailableAdditionalEquipmentType(eqNr);
+//        }
+        carU.setAdditionalEquipmentType(uEq);
+        cars[index++] = carU;
+
+    }//addRandomNewCar
 
     public int getNumberOfCars(){
         return index;
@@ -164,10 +252,13 @@ public class ProductionLine {
         if((index > 1) &&(index < 5)) s1 = " SAMOCHODY";
         if(index > 4) s1 = " SAMOCHODÓW";
 
+        System.out.println(" *********************************************************************** ");
         System.out.println(" LINIA PRODUKCYJNA ZAWIERA : " + getNumberOfCars()+ s1);
         for (int i = 0; i < index; i++) {
-            System.out.println(" samochód nr "+ i+1);
+            System.out.println(" samochód nr "+ (i+1));
             System.out.println(cars[i].toString());
+            System.out.println(" ------------------------------------------------------------------------ ");
         }
+        System.out.println(" *********************************************************************** ");
     }
 }

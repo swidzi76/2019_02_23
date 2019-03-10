@@ -179,10 +179,10 @@ public class Car {
                 "\n * bodyType = " + bodyType +
                 "\n * color = "+ this.color +
                 "\n * meatlic = "+ this.metalic +
-                "\n * additionalEquipmentType = ");
+                "\n * additionalEquipmentType("+additionalEquipmentType.length+") = ");
 
         for (AdditionalEquipmentType ae : additionalEquipmentType) {
-            s1.append(", "+ae);
+            s1.append(""+ae+", ");
         }
         return s1.toString();
     }
