@@ -21,24 +21,36 @@ public class Math {
     private static double PI = 3.14;
 
     private Math(){}
+    public static class Operation {
+        public static int add(int a, int b){
+            return a+b;
+        }
+        public static int substract(int a, int b){
+            return a - b;
+        }
+        public static int multiply(int a, int b){
+            return a * b;
+        }
+
+        public static int divide(int a, int b){
+            return a / b;
+        }
+
+    }
+    public static class Compare {
+        public static int min(int a, int b) {
+            return ((a < b) ? a : b);
+        }
+        public static int max(int a, int b) {
+            return ((a > b) ? a : b);
+        }
+
+    }
 
     public static double circularField(int radius){
         return PI * pow(radius,2);
     }
 
-    public static int add(int a, int b){
-        return a+b;
-    }
-    public static int substract(int a, int b){
-        return a - b;
-    }
-    public static int multiply(int a, int b){
-        return a * b;
-    }
-
-    public static int divide(int a, int b){
-        return a / b;
-    }
 //    public static int min(int a, int b){
 //        if(a < b){
 //            return a;
@@ -46,12 +58,6 @@ public class Math {
 //        else
 //            return b;
 //    }
-    public static int min(int a, int b) {
-    return ((a < b) ? a : b);
-}
-    public static int max(int a, int b) {
-        return ((a > b) ? a : b);
-    }
 //    public static int max(int a, int b){
 //        if(a > b){
 //            return a;
@@ -60,8 +66,8 @@ public class Math {
 //            return b;
 //    }
     public static int pow(int a, int b){
-        int pow = a;
-        for (int i = 0; i < b-1; i++) {
+        int pow = 1;
+        for (int i = 0; i < b; i++) {
             pow *= a;
         }
         return pow;
