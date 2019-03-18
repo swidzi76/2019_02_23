@@ -67,16 +67,43 @@ public class Tasks215 {
         words.addWord("btt");
         words.show();
         System.out.println(words.getWordCount("abc"));
+        // ZADANIE 6
+        // Ogranicz możliwość podania dowolnego typu obiektów dla klasy z pkt. 4.
 
         // ZADANIE 7
         // * Utwórz klasę Forest która będzie zawierała zbiór różnego rodzajów drzew (liściastych i iglastych
         // - dodaj odpowiednie klasy).
         // Dodaj metody, które zwrócą wszystkie drzewa,
         // tylko liściaste albo tylko iglaste. Dodaj metodę, która zwróci drzewa starsze niż podany parametr.
-        System.out.println(" --------------------- ZADANIE 6 ------------------------");
+        System.out.println(" --------------------- ZADANIE 7 ------------------------");
+        Forest forest = new Forest();
+        forest.add(new DeciduousTree(50, "Lipa"));
+        forest.add(new DeciduousTree(40, "Brzoza"));
+        forest.add(new ConiferousTree(30, "Sosna"));
+        forest.add(new ConiferousTree(20, "Świerk"));
+        forest.add(new DeciduousTree(15, "Topola"));
 
-    }
+        System.out.println(" ---- Drzewa iglaste w  lesie ----------");
+        for (Tree tree : forest.getConiferousTrees()) {
+            System.out.println(tree);
+        }
 
+        System.out.println(" ---- Drzewa liściaste w lesie ----------");
+        for (Tree tree : forest.getDeciduousTrees()) {
+            System.out.println(tree);
+        }
+
+        System.out.println(" ---- Drzewa starsze niż 30 lat w lesie ----------");
+        for (Tree tree : forest.getOlderThan(30)) {
+            System.out.println(tree);
+        }
+    }//main
+
+    // metody statyczne
+    // -----------------------------------------------------------------------------------------
+    // -----------------------------------------------------------------------------------------
+    // -----------------------------------------------------------------------------------------
+    // -----------------------------------------------------------------------------------------
     public static <T extends Number> void task3(List<T> list){
         for(T number : list){
             if(number.intValue() > 10){
