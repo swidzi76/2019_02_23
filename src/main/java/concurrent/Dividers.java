@@ -24,7 +24,7 @@ public class Dividers implements Runnable {
         for (Integer integer : result) {
             s+= integer+ ", ";
         }
-        System.out.println(s);
+//        System.out.println(s);
     }
 
 }

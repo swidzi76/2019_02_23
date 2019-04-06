@@ -5,6 +5,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class ThreadRunner {
+    private static long MAX_NUMBER = 100000;
+
     public static void main(String[] args) throws InterruptedException{
         System.out.println(Thread.currentThread().getName());
 
@@ -62,7 +64,7 @@ public class ThreadRunner {
         System.out.println("Start ExecutorService!");
 
         ExecutorService executorService = Executors.newFixedThreadPool(8);
-        for (int i = 1; i <= 200; i++) {
+        for (int i = 1; i <= MAX_NUMBER; i++) {
             executorService.execute(new Dividers(i));
         }
         executorService.shutdown();
@@ -71,7 +73,19 @@ public class ThreadRunner {
         System.out.println("Done!");
 
         long end = System.currentTimeMillis();
-        System.out.println("Time: " + (end - start) + " ms");
+        System.out.println(" szukamy dzielników dla liczb od 1 do " + MAX_NUMBER);
+        System.out.println("Time threads: " + (end - start) + " ms");
+
+        // dzielniki normalnie
+
+        start = System.currentTimeMillis();
+        for (int i = 1; i <= MAX_NUMBER; i++) {
+            Dividers dividers = new Dividers(i);
+            dividers.run();
+        }
+        end = System.currentTimeMillis();
+
+        System.out.println("Time normal: " + (end - start) + " ms");
 
     }
 }
