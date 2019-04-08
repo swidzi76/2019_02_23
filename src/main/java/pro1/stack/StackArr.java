@@ -1,4 +1,4 @@
-package pro1;
+package pro1.stack;
 
 public class StackArr {
     private int[] arr = new int[10];

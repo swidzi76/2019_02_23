@@ -29,5 +29,38 @@ public class QueueApp {
         while(!queue.isEmpty()){
             System.out.println(queue.pool());
         }
+        System.out.println(" ------ test kolejki dwu kierunkowej");
+        Dequeue<Integer> dequeue = new Dequeue<>();
+        dequeue.offerFirst(21);
+        dequeue.offerFirst(34);
+        dequeue.offerLast(12);
+        System.out.println(" size = "+ dequeue.size());
+        System.out.println(" peekFirst : "+ dequeue.peekFirst());
+        System.out.println(" peekLast : "+ dequeue.peekLast());
+        System.out.println(" isEmpty : "+ dequeue.isEmpty());
+        System.out.println(" poolFirst : "+ dequeue.poolFirst());
+        System.out.println(" poolLast : "+ dequeue.poolLast());
+        System.out.println(" size = "+ dequeue.size());
+        System.out.println(" peekFirst : "+ dequeue.peekFirst());
+        System.out.println(" peekLast : "+ dequeue.peekLast());
+        System.out.println(" offerLast 33: "); dequeue.offerLast(33);
+        System.out.println(" peekLast : "+ dequeue.peekLast());
+        System.out.println(" poolFirst : " + dequeue.poolFirst());
+        System.out.println(" poolFirst : " + dequeue.poolFirst());
+        System.out.println(" poolFirst : " + dequeue.poolFirst());
+        System.out.println(" size = "+ dequeue.size());
+        System.out.println(" isEmpty : "+ dequeue.isEmpty());
+
+        System.out.println(" dodanie do kolejki 4 elemrntów");
+        dequeue.offerFirst(21);
+        dequeue.offerFirst(2);
+        dequeue.offerFirst(231);
+        dequeue.offerFirst(212);
+        System.out.println(" czy zawiera 2 " + dequeue.contains(2));
+        System.out.println(" czy zawiera 5 " + dequeue.contains(5));
+        System.out.println(" clear");dequeue.clear();
+        System.out.println(" size = "+ dequeue.size());
+        System.out.println(" isEmpty : "+ dequeue.isEmpty());
+
     }
 }

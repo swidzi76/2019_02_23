@@ -1,4 +1,4 @@
-package pro1;
+package pro1.stack;
 
 public class StackApp {
     public static void main(String[] args) {

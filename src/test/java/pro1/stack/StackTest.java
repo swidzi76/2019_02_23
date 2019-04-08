@@ -2,7 +2,6 @@ package pro1.stack;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pro1.Stack;
 
 public class StackTest {
     @Test
@@ -45,6 +44,20 @@ public class StackTest {
 
         //then
         Assertions.assertEquals(42, result.intValue());
+    }
+    @Test
+    public void shouldSizeStack(){
+        //given
+        Stack<Integer> stack = new Stack();
+        //when
+        stack.push(23);
+        stack.push(42);
+
+        //TODO
+        int result = stack.size();
+
+        //then
+        Assertions.assertEquals(2, result);
     }
 
 }

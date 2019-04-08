@@ -1,17 +1,17 @@
-package pro1;
+package pro1.stack;
 
 public class Stack<T>{
-    Item<T> head;
+    private Item<T> head;
+    private int size;
 
     public Stack() {
         this.head = null;
+        size = 0;
     }
-    public T getHead(){
-        return head.getValue();
-    }
-    public void push(int value){
+    public void push(T value){
         Item<T> tempItem = new Item(this.head, value);
         head = tempItem;
+        size++;
     }
     public boolean isEmpty(){
         if(head == null){
@@ -31,6 +31,10 @@ public class Stack<T>{
         Item<T> temp = head.getNext();
         T result = head.getValue();
         head = temp;
+        size--;
         return result;
+    }
+    public int size(){
+        return size;
     }
 }

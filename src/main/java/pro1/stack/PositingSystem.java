@@ -1,4 +1,4 @@
-package pro1;
+package pro1.stack;
 
 public class PositingSystem {
     static public String changePositingSystem(int value, int base){
