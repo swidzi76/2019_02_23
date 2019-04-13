@@ -1,4 +1,4 @@
-package pro1.queue;
+package pro1.tasks;
 
 import pro1.stack.Stack;
 

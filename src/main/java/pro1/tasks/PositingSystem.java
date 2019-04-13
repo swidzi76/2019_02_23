@@ -1,4 +1,6 @@
-package pro1.stack;
+package pro1.tasks;
+
+import pro1.stack.Stack;
 
 public class PositingSystem {
     static public String changePositingSystem(int value, int base){

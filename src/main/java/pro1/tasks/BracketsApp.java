@@ -1,6 +1,6 @@
-package pro1.queue;
+package pro1.tasks;
 
-import static pro1.queue.Brackets.checkBrackets;
+import static pro1.tasks.Brackets.checkBrackets;
 
 public class BracketsApp {
     public static void main(String[] args) {
